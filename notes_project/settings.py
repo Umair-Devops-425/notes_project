@@ -13,8 +13,8 @@ import os
 from pathlib import Path
 from decouple import config
 
-# creating to store SECRET_KEY
-SECRET_KEY = config("SECRET_KEY")
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = config('django-insecure-mq=)0la@_7z^^ev37rpncg4aqu2n5x1#u5ht$ovse!hpv8vvf8')
 DEBUG = config("DEBUG", default=False, cast=bool)
 
 
@@ -24,9 +24,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-mq=)0la@_7z^^ev37rpncg4aqu2n5x1#u5ht$ovse!hpv8vvf8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
