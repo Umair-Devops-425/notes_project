@@ -21,7 +21,7 @@ db.sqlite3
 /postgres_data/
 
 # Environment
-.env
+C:\Users\ssabs\notes_project\env
 
 # VSCode / IDE
 .vscode/
