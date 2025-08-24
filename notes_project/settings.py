@@ -13,7 +13,7 @@ import os
 from pathlib import Path
 from decouple import config
 
-# creating variable to store SECRET_KEY
+# creating to store SECRET_KEY
 SECRET_KEY = config("SECRET_KEY")
 DEBUG = config("DEBUG", default=False, cast=bool)
 
