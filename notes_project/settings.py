@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 import os
 from pathlib import Path
-
 from decouple import config
 
 SECRET_KEY = config("SECRET_KEY")
@@ -83,11 +82,11 @@ WSGI_APPLICATION = 'notes_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('postgres'),     # default db ka naam (Adminer me bhi yahi tha)
-        'USER': config('postgres'),     # default user (kyunki tu POSTGRES_USER set nahi kiya tha)
-        'PASSWORD': config('example'),  # jo docker-compose.yml me diya hai
-        'HOST': config('db'),           # docker service ka naam (IMPORTANT)
-        'PORT': config(5432),
+        'NAME': config('DB_NAME', default='postgres'),
+        'USER': config('DB_USER', default='postgres'),
+        'PASSWORD': config('DB_PASSWORD', default='example'),
+        'HOST': config('DB_HOST', default='localhost'),
+        'PORT': config('DB_PORT', default='5432'),
     }
 }
 
