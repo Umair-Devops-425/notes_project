@@ -14,6 +14,7 @@ jobs:
       postgres:
         image: postgres:15
         env:
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: example
           POSTGRES_DB: postgres
