@@ -14,7 +14,7 @@ from pathlib import Path
 from decouple import config
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('django-insecure-mq=)0la@_7z^^ev37rpncg4aqu2n5x1#u5ht$ovse!hpv8vvf8')
+SECRET_KEY = config("SECRET_KEY")
 DEBUG = config("DEBUG", default=False, cast=bool)
 
 
