@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  db:
+    image: postgres:15
+    restart: always
+    shm_size: 128mb
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: example
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  # Django Web Application
+  web:
+    image: umair81/notes_project:latest  
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - SECRET_KEY=django-insecure-mq=)0la@_7z^^ev37rpncg4aqu2n5x1#u5ht$ovse!hpv8vvf8
+      - DEBUG=True
+      - DB_HOST=db
+      - DB_NAME=postgres
+      - DB_USER=postgres
+      - DB_PASSWORD=example
+      - DB_PORT=5432
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+
+  # Database Admin Interface (Optional)
+  adminer:
+    image: adminer:latest
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:

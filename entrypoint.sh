@@ -1,10 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
 echo "Making migrations..."
-python manage.py makemigrations --noinput
+python manage.py makemigrations
 
 echo "Applying database migrations..."
-python manage.py migrate --noinput
+python manage.py migrate
 
 echo "Collecting static files..."
 python manage.py collectstatic --noinput
