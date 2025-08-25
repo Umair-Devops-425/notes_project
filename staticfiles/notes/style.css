@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+/* Heading 1 styles */
+.h1{
+    font-size: var(--text-xs); /* 0.75rem (12px) */ 
+    line-height: var(--text-xs--line-height); /* calc(1 / 0.75) */
+}
